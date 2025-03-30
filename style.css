@@ -1,0 +1,240 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rockwell', serif, sans-serif;
+    overflow-x: hidden;
+    background-color: #FAF6F2;
+    color: #5E3B3B;
+}
+
+/* General Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    height: 50px;
+    box-sizing: border-box;
+}
+
+/* Navbar Left (Links in Horizontal Layout for Desktop) */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-links {
+    display: flex; /* Arrange links horizontally */
+    flex-direction: row; /* Ensure links are side by side */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px; /* Add spacing between links */
+}
+
+.nav-links li {
+    margin: 0; /* Remove default margin */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #4E2B29;
+    font-size: 1rem;
+    font-family: 'Rockwell', serif, sans-serif; /* Use your custom font */
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #A66A5D;
+}
+
+/* Navbar Center (Brand Name) */
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #4E2B29;
+    text-align: center;
+    flex-grow: 1; /* Ensures centering */
+}
+
+/* Navbar Right (Language & Profile Icon) */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.language {
+    font-size: 1rem;
+    color: #4E2B29;
+    text-decoration: none;
+}
+
+.language:hover {
+    color: #A66A5D;
+}
+
+.profile-icon svg {
+    fill: #4E2B29;
+    transition: fill 0.3s;
+}
+
+.profile-icon:hover svg {
+    fill: #A66A5D;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none; /* Hidden by default (only visible on mobile) */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #4E2B29;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #4E2B29;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* Sidebar Menu */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background-color: #FAF6F2;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 200;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    gap: 15px; /* Add spacing between links */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #4E2B29;
+    font-size: 1.2rem;
+    font-family: 'Rockwell', serif, sans-serif; /* Use your custom font */
+    transition: color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: #A66A5D;
+}
+
+/* Sidebar Active State */
+.sidebar.active {
+    left: 0; /* Slide in */
+}
+
+/* Brand Name Intro (Large at Start) */
+.brand-intro {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem;
+    font-weight: bold;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    z-index: 10;
+    text-align: center;
+}
+
+/* Fade-out Animation */
+.brand-intro.hidden {
+    opacity: 0; /* Smooth fade-out */
+    transition: opacity 1s ease-in-out;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 100vh;
+}
+
+.gallery img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Fix Left Block Issue */
+* {
+    box-sizing: border-box; /* Prevent extra padding/margins */
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    .nav-left {
+        display: none; /* Hide nav links on mobile */
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger menu on mobile */
+    }
+
+    .sidebar {
+        width: 60%; /* Adjust sidebar width for mobile */
+    }
+}
+
+
+
+
+
+
+
+
